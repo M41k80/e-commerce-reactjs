@@ -109,11 +109,13 @@ function App() {
         </button>
 
       <Sidebar handleChange={handleChange} />
-      
+      <main>
       <Navigation query={query} handleInputChange={handleInputChange} />
       <Recommended handleClick={handleClick} />
       <Products result={result} />
       {/* <ThemeToggle /> */}
+      </main>
+      
     </div>
   )
 }

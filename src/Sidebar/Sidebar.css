@@ -1,3 +1,4 @@
+
 .sidebar {
   width: 15%;
   position: fixed;
@@ -8,7 +9,6 @@
   flex-direction: column;
   align-items: center;
 }
-
 .logo-container {
   margin-bottom: 4rem;
 }
@@ -17,33 +17,43 @@
   margin-top: 1.3rem;
 }
 
-.sidebar-title {
-  font-size: 22px;
-  font-weight: normal;
-  margin-bottom: 20px;
+/* Sidebar visible */
+.sidebar.visible {
+  left: 0; /* Muestra el sidebar */
 }
 
-h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #c42f06;
+/* Contenido del sidebar */
+.sidebar-content {
+  padding: 20px;
+}
+
+/* Botón de hamburguesa para móviles */
+.sidebar-toggle {
+  display: none; /* Oculta el botón en pantallas grandes */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: rgb(218, 193, 193);
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
 }
 
 /* Media queries para móviles */
 @media (max-width: 768px) {
+  .sidebar-toggle {
+    display: block; /* Muestra el botón en móviles */
+    
+  }
+
   .sidebar {
-    width: 100%; /* Ocupa todo el ancho en móviles */
-    position: static; /* Cambia la posición */
-    height: auto;
-    border-right: none;
-    padding: 10px;
+    width: 50%; /* Ocupa todo el ancho en móviles */
+    
+    left: -100%; /* Oculta el sidebar por defecto */
+    background-color: rgb(234, 120, 120);
   }
 
-  .logo-container {
-    margin-bottom: 2rem;
-  }
-
-  .logo-container h1 {
-    margin-top: 0;
+  .sidebar.visible {
+    left: 0; /* Muestra el sidebar */
   }
 }

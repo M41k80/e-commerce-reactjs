@@ -2,11 +2,23 @@ import './Sidebar.css'
 import Category from './Category/Category'
 import Colors from './Colors/Colors'
 import Price from './Price/Price'
+import { useState } from 'react'
+import { FaBars, FaTimes } from "react-icons/fa"
 
 const Sidebar = ({ handleChange }) => {
+
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false)
+
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible)
+  }
+
   return (
     <>
-      <section className='sidebar'>
+      <button className="sidebar-toggle" onClick={toggleSidebar}>
+        {isSidebarVisible ? <FaTimes size={24} /> : <FaBars size={24} />}
+      </button>
+      <aside className={`sidebar ${isSidebarVisible ? "visible" : ""}`}>
         <div className='logo-container'>
           <h1>
             🛒 My Shop
@@ -16,7 +28,7 @@ const Sidebar = ({ handleChange }) => {
         <Price handleChange={handleChange} />
         <Colors handleChange={handleChange} />
         
-      </section>
+      </aside>
     </>
   )
 }
