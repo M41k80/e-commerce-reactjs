@@ -1,4 +1,4 @@
-import { AiFillStar } from "react-icons/ai";
+import { AiFillStar } from "react-icons/ai"
 
 const data = [
   {
@@ -316,6 +316,6 @@ const data = [
     color: "black",
     category: "flats",
   },
-];
+]
 
-export default data;
+export default data

@@ -1,11 +1,10 @@
-
-
-const Buttons = () => {
+import '../Recommended/Recommended.css'
+const Button = ({ onClickHandler, value, title }) => {
   return (
-    <div>
-      hi
-    </div>
+    <button onClick={onClickHandler} value={value} className="btns">
+      {title}
+    </button>
   )
 }
 
-export default Buttons
+export default Button
