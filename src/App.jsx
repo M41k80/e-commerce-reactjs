@@ -7,9 +7,15 @@ import Recommended from "./Recommended/Recommended"
 import Sidebar from "./Sidebar/Sidebar"
 import Card from "./components/Card"
 import "./index.css"
+import ThemeToggle from "./components/ThemeToggle"
+
+import { FaMoon, FaSun } from "react-icons/fa"
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState(null)
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem('isDarkMode') === 'true'
+  )
 
   // ----------- Input Filter -----------
   const [query, setQuery] = useState("")
@@ -67,15 +73,48 @@ function App() {
     )
   }
 
+  const toggleTheme = () => {
+    const newMode = !isDarkMode
+    setIsDarkMode(newMode)
+    localStorage.setItem('isDarkMode', newMode)
+  }
+
+  const themeStyles = {
+    backgroundColor: isDarkMode ? '#121212' : '#ffffff',
+    color: isDarkMode ? '#e0e0e0' : '#000000',
+    minHeight: '100vh',
+  }
+
+
+
   const result = filteredData(products, selectedCategory, query);
 
   return (
-    <>
+    <div style={themeStyles}>
+      {/* // button to toggle theme */}
+      <button onClick={toggleTheme}
+      style={{
+        position: 'fixed',
+        top: '20px',
+        right: '20px',
+        padding: '10px',
+        borderRadius: '50%',
+        border: 'none',
+        cursor: 'pointer',
+        backgroundColor: isDarkMode ? '#333' : '#eee',
+        color: isDarkMode ? '#fff' : '#000',
+        }}
+        >
+        {isDarkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
+        </button>
+
       <Sidebar handleChange={handleChange} />
+      
       <Navigation query={query} handleInputChange={handleInputChange} />
       <Recommended handleClick={handleClick} />
       <Products result={result} />
-    </>
+      {/* <ThemeToggle /> */}
+    </div>
   )
 }
 
