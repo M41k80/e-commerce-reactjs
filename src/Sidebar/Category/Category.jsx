@@ -1,5 +1,5 @@
 import './CategoryCss.css'
-import Input from '../../components/iNPUT.JSX'
+import Input from '../../components/Input'
 
 const Category = ({handleChange}) => {
   return (
