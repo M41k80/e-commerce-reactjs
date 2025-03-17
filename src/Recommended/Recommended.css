@@ -1,26 +1,45 @@
 .recommended-flex {
-    display: flex;
-    margin-left: 20rem;
+  display: flex;
+  margin-left: 20rem;
+}
+
+.recommended-title {
+  margin-left: 20rem;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #c42f06;
+}
+
+.btns {
+  padding: 10px 20px;
+  margin-right: 6px;
+  background: transparent;
+  border: none;
+  border: 0.6px solid #f61111;
+  border-radius: 5px;
+  color: #4c765a;
+  cursor: pointer;
+}
+
+/* Media queries para móviles */
+@media (max-width: 768px) {
+  .recommended-flex {
+    margin-left: 0; /* Elimina el margen izquierdo en móviles */
+    flex-direction: column; /* Apila los botones verticalmente */
+    align-items: center;
   }
-  
+
   .recommended-title {
-    margin-left: 20rem;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-size: 20px;
-    font-family: sans-serif;
-    font-weight: bold;
-    color: #c42f06;
+    margin-left: 0;
+    text-align: center;
   }
 
   .btns {
-    padding: 10px 20px;
-    margin-right: 6px;
-    background: transparent;
-    border: none;
-    border: 0.6px solid #f61111;
-    border-radius: 5px;
-    color: #4c765a;
-    cursor: pointer;
-    
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 100%; /* Ocupa todo el ancho en móviles */
   }
+}

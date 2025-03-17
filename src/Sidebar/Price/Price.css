@@ -5,3 +5,13 @@
   .ml {
     margin-left: 20px;
   }
+
+  @media (max-width: 768px) {
+    .price-title {
+      margin-top: 1rem; /* Ajusta el margen superior en móviles */
+    }
+  
+    .ml {
+      margin-left: 10px; /* Reduce el margen izquierdo en móviles */
+    }
+  }

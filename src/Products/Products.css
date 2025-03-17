@@ -5,45 +5,62 @@
   margin-top: 2rem;
   z-index: -2;
 }
-  
+
 .card {
   margin: 20px;
   border: 2px solid #ededed;
   padding: 20px;
   cursor: pointer;
 }
-  
+
 .card-img {
   width: 13rem;
   margin-bottom: 1rem;
 }
-  
+
 .card-title {
   margin-bottom: 1rem;
 }
-  
+
 .card-reviews {
   margin-bottom: 1rem;
   display: flex;
 }
-  
+
 .rating-star {
   color: #f0d655;
 }
-  
+
 .total-reviews {
   font-size: 0.9rem;
   margin-left: 10px;
   color: #eb1010;
   font-weight: bold;
 }
-  
+
 .card-price {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-  
+
 .bag-icon {
   color: #4c9b74;
+}
+
+/* Media queries para móviles */
+@media (max-width: 768px) {
+  .card-container {
+    margin-left: 0; /* Elimina el margen izquierdo en móviles */
+    justify-content: center; /* Centra las tarjetas */
+  }
+
+  .card {
+    margin: 10px;
+    width: 100%; /* Ocupa todo el ancho en móviles */
+  }
+
+  .card-img {
+    width: 100%; /* Ajusta el ancho de la imagen */
+  }
 }
